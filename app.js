@@ -1,10 +1,11 @@
 // require libraries
 const express = require('express');
+const config = require('dotenv').config()
 
 // Require tenorjs near the top of the file
 const Tenor = require("tenorjs").client({
   // Replace with your own key
-  "Key": "AIzaSyCfPmjF3cfN-DPvoCGSXpILk36ut0Lp15c", // https://tenor.com/developer/keyregistration
+  "Key": process.env.API_KEY, // https://tenor.com/developer/keyregistration
   "Filter": "high", // "off", "low", "medium", "high", not case sensitive
   "Locale": "en_US", // Your locale here, case-sensitivity depends on input
 });
